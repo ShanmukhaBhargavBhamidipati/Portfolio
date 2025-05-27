@@ -1,0 +1,480 @@
+:root {
+    --primary-color: #FF5C5C;
+    --text-color: #F5F5F5;
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --background-dark: rgba(26, 26, 26, 0.85);    
+    --card-bg: rgba(46, 46, 46, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    background-image: url('Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Common Section Styles */
+section {
+    min-height: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background-dark);
+    z-index: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.content {
+    width: 100%;
+    text-align: center;
+}
+
+/* Typography */
+h2 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+p, li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+ul {
+    margin-left: 50px;
+    margin-bottom: 2rem;
+    list-style-type: none;
+}
+
+li {
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Experience & Education Sections - List Item Alignment */
+.experience-grid li,
+.education-grid li {
+    text-align: left;
+    padding-left: 1.5rem;
+    margin-left: 0;
+}
+
+.experience-grid ul,
+.education-grid ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.experience-grid li::before,
+.education-grid li::before {
+    left: 0;
+}
+
+/* Homepage Specific */
+.homepage-container {
+    flex-direction: column;
+}
+
+.scrolling-headlines {
+    position: relative;
+    height: 4rem; 
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.headline {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.5s ease-in-out;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.2;
+    font-size: clamp(2rem, 8vw, 4rem); 
+}
+
+.headline span {
+    color: var(--primary-color);
+}
+
+.headline.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.headline.exit {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+.image-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+/* Common Card Styles */
+.card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* About Me Section */
+.aboutme-content {
+    text-align: left;
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skill-category h3 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.skill-category ul {
+    margin-left: 0;    
+    padding-right: 2rem;    
+}
+
+.skill-category li::before {
+    left: 0;
+}
+
+.soft-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background-color: rgba(255, 92, 92, 0.2);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--primary-color);
+}
+
+/* Experience & Education Sections */
+.experience-grid,    
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.position,    
+.tech-stack,    
+.duration,    
+.degree,    
+.gpa {
+    font-style: italic;
+    color: #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Connect Section */
+.connect-section {
+    padding-bottom: 4rem;
+}
+
+.connect-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: stretch;
+}
+
+.connect-method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.connect-method h3 {
+    margin-bottom: 0.5rem;
+}
+
+.connect-method p {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+.social-icon {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+.social-icon:hover {
+    color: var(--primary-color);
+}
+
+.social-icon::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.social-icon:hover::after {
+    width: 100%;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.primary-btn {
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #2E2E2E;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: #2E2E2E;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .homepage-container {
+        flex-direction: row;
+        gap: 3rem;
+    }
+    
+    .content {
+        text-align: left;
+    }
+    
+    .scrolling-headlines {
+        height: 5rem; 
+    }
+    
+    .headline {
+        font-size: clamp(3rem, 4vw, 5rem);
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    p, li {
+        font-size: 1.1rem;
+    }
+    
+    .button-container {
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    .homepage-container {
+        gap: 4rem;
+    }
+    
+    .scrolling-headlines {
+        height: 6rem; 
+    }
+    
+    .headline {
+        font-size: clamp(3.5rem, 3.5vw, 6rem);
+    }
+}
+
+@media (min-width: 1440px) {
+    .headline {
+        font-size: clamp(4rem, 3vw, 7rem);
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    p, li {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid,
+    .experience-grid,
+    .education-grid,
+    .connect-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 350px) {
+    section {
+        padding: 1rem;
+    }
+    
+    .scrolling-headlines {
+        height: 3.5rem; 
+    }
+    
+    .headline {
+        font-size: clamp(1.8rem, 8vw, 2.5rem); 
+    }
+    
+    h2 {
+        font-size: 1.25rem;
+    }
+    
+    .primary-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+}

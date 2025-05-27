@@ -131,7 +131,7 @@ li::before {
 
 .scrolling-headlines {
     position: relative;
-    height: 4rem; 
+    height: 6rem; 
     overflow: hidden;
     margin-bottom: 1rem;
 }
@@ -395,7 +395,7 @@ li::before {
     }
     
     .scrolling-headlines {
-        height: 5rem; 
+        height: 6rem; 
     }
     
     .headline {
@@ -421,7 +421,7 @@ li::before {
     }
     
     .scrolling-headlines {
-        height: 6rem; 
+        height: 7rem; 
     }
     
     .headline {
@@ -430,6 +430,9 @@ li::before {
 }
 
 @media (min-width: 1440px) {
+    .scrolling-headlines {
+        height: 8rem; 
+    }
     .headline {
         font-size: clamp(4rem, 3vw, 7rem);
     }
@@ -458,7 +461,7 @@ li::before {
     }
     
     .scrolling-headlines {
-        height: 3.5rem; 
+        height: 4.5rem; 
     }
     
     .headline {

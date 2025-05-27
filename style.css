@@ -133,7 +133,7 @@ li::before {
     position: relative;
     height: 6rem; 
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
 }
 
 .headline {
